@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
 {%block title %}Search Result For {{search_query}}{% endblock %}
-{% load static%}
 {% block content %}
 
         {% if search_result %}
-        <div class="container mt-3">
+        <div class="container mt-3 ">
                 <div class="search-header">
                         <br>
                         <h3 style="text-align: center;" >Search Results For {{search_query}}</h3>
@@ -12,11 +11,12 @@
                 </div>
                 {% for song in search_result %}
                 <div class="card mb-3">
-                        <div class="row g-0">
-                        <div class="col-md-2">
+                        <div class="row g-1">
+                        <div class="col-md-1">
+
                                 <img src="{{song.songThumbnail.url}}" class="img-fluid rounded-start" alt="{{song.songName}}">
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-8 ">
                                 <div class="card-body">
                                 <h5 class="card-title">{{song.songName}}</h5>
                                 <h6 class="card-title">Artist - {{song.album.artist.artistName}}</h6>
